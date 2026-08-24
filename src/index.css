@@ -1,0 +1,22 @@
+/*reseteo de estilos*/
+/* selector uiversal*/
+* {
+    /*margen externo: distacia
+    entre el elemento y los otros elementos*/
+    margin: 0;
+    /* margen interno: espacio entre
+    el contenido y el border*/
+    padding: 0;
+    /*Ajustar el contenido a las dimensiones
+    de la caja */
+    box-sizing: border-box;   
+}
+
+/* estilo basico para el body*/
+body{
+    font-family: Arial;
+    background-color:  #bfcbd8;
+    color: #333;
+    padding: 2rem;
+    
+}
