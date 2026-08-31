@@ -1,7 +1,7 @@
 /*reseteo de estilos*/
-/* selector uiversal*/
+/* selector universal*/
 * {
-    /*margen externo: distacia
+    /*margen externo: distancia
     entre el elemento y los otros elementos*/
     margin: 0;
     /* margen interno: espacio entre
@@ -13,10 +13,132 @@
 }
 
 /* estilo basico para el body*/
-body{
-    font-family: Arial;
-    background-color:  #bfcbd8;
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #a67fd8;
     color: #333;
     padding: 2rem;
-    
+}
+
+/* contenedor que pone el formulario y la tabla lado a lado */
+.contenedor {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* tarjeta del formulario */
+.formulario {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 2rem 3rem;
+  width: 350px;
+  text-align: center;
+}
+
+.formulario h2 {
+  font-size: 1.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 3px solid #8B49F4;
+  margin-bottom: 1.5rem;
+}
+
+.formulario label {
+  display: block;
+  text-align: left;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  color: #000000;
+  font-weight: 700;   /* esto las pone en negrilla */
+}
+
+.formulario input,
+.formulario select {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.formulario button {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.7rem;
+  background: #8B49F4;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.formulario button:hover {
+  background: #7238d9;
+}
+
+/* sección de la tabla */
+.lista {
+  flex: 1;
+  max-width: 500px;
+}
+
+.lista h2 {
+  color: #ffffff;           /* contraste con el fondo morado */
+  margin-bottom: 1.9rem;    /* separación de la tabla */
+  font-size: 1.5rem;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2); /* opcional: mejora la legibilidad */
+}
+
+/* tabla de tareas */
+table.comicGreen {
+  font-family: inherit;
+  border: none;
+  background-color: #ffffff;
+  width: 100%;
+  text-align: center;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+table.comicGreen th {
+  background: #8B49F4;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 10px 8px;
+  border: none;
+}
+
+table.comicGreen td {
+  padding: 10px 8px;
+  border: none;
+  border-bottom: 1px solid #eee;
+}
+
+table.comicGreen tbody td {
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  background-color: #ffffff;
+}
+
+table.comicGreen tbody tr:last-child td {
+  border-bottom: none;
+}
+
+table.comicGreen tbody tr:hover td {
+  background-color: #f5f0fd;
+}
+
+.header {
+ color: #ffffff
+
 }

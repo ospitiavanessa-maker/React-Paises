@@ -19,6 +19,13 @@ const [tarea , setTarea ] = useState<Tarea>({
                                               })
 const [ listaTareas, setListaTareas ] = useState<Tarea[]>([])
 
+listaTareas.map((t: Tarea, index) => (
+  <tr key={index}>
+    <td>{t.titulo}</td>
+    <td>{t.prioridad}</td>
+  </tr>
+))
+
 //gestion del eventocambio
 //se utiliza una variable cap
 //el control y sus propiedades
@@ -56,21 +63,19 @@ const cambiar = (e:any) => {
 
   return (
     <>
-    <div>Panel de tareas</div>
-    {/*aqui va formulario*/}
-    <section>
-      <form onSubmit={guardarTarea} >
+    <div className="header">Panel de tareas</div>
+    <div className="contenedor">
+      <section className="formulario">
         <h2>Nueva Tarea</h2>
-        <div>
-          <label htmlFor="Titulo"> titulo:</label>
+        <form onSubmit={guardarTarea}>
+          <label htmlFor="Titulo">Titulo:</label>
           <input
               name="titulo"
               id="Titulo"
               onChange={cambiar} 
               type="text" />
-        </div>
-        <div>
-          <label htmlFor="">Prioridad</label>
+
+          <label htmlFor="prioridad">Prioridad</label>
           <select name="prioridad"
                   id="prioridad"
                   onChange={cambiar}>
@@ -78,48 +83,34 @@ const cambiar = (e:any) => {
                   <option>Media</option>
                   <option>Baja</option>    
           </select>
-        </div>
-        <div>
-          <button type="submit">
-            Guardar tarea
-          </button>
-        </div>
-      </form>
-    </section>
-    {/*aqui va lista tareas*/}
-    <section>
-      <h2>Lista de Tareas</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>titulo</th>
-            <th>prioridad</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            /* recorrer la lista de tareas*/
-            listaTareas.map((t:Tarea)=>(
-              <tr>
-                <td>{t.titulo}</td>
-                <td>{t.prioridad}</td>
-              </tr>
-            ))
-          }
-        </tbody>
-        <tfoot></tfoot>
-      </table>
-    </section>
+
+          <button type="submit">Guardar tarea</button>
+        </form>
+      </section>
+      {/*aqui va lista tareas*/}
+      <section className="lista">
+        <h2>Lista de Tareas</h2>
+        <table className="comicGreen">
+          <thead>
+            <tr>
+              <th>titulo</th>
+              <th>prioridad</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              listaTareas.map((t:Tarea, index)=>(
+                <tr key={index}>
+                  <td>{t.titulo}</td>
+                  <td>{t.prioridad}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+          <tfoot></tfoot>
+        </table>
+      </section>
+    </div>
     </>
-  )
-}
-
-export default App
-
-
-//"table css generator" para poner estilo de tabla
-//en el index.css
-
-//para el formulario 
-//Css form generator
-//la tercera opcion
+  )};
+export default App;
