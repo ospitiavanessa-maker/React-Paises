@@ -1,4 +1,4 @@
-export interface Tareas {
-    titulo: string,
-    prioridad: string
+export interface Tarea {
+    titulo: string;
+    prioridad: string;
 }
